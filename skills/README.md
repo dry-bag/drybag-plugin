@@ -24,10 +24,9 @@ harness's own tool, and where it has none write what to do instead. The Codex co
 models both cases — a tool under another name (`apply_patch`), and a capability that is simply
 absent ("do the work inline").
 
-Skills reference the CLI by name (`stayfixed …`): the plugin root placeholder is not substituted
+Skills reference the CLI by name (`drybag …`): the plugin root placeholder is not substituted
 in skill content under Codex, so a path to the launcher would break there. Detail beyond a
 short procedure goes in `<skill>/references/`.
 
-The seven authored skills, `adopt` among them, wrap the methodology rather than a command: each
-names the commands it runs and the reference that carries its detail, and each ends by saying
-what it does not do.
+`memory-sweep` wraps a procedure rather than a command: it names the commands it runs and
+the reference that carries its detail.

@@ -6,15 +6,15 @@ description: Bind a repository to its private memory overlay and point the harne
 # Attaching the overlay
 
 The store is `<overlay>/projects/<project name>/memory`, where the name is the `[project] name`
-in this repository's `stayfixed.toml`, and `attach` derives it: the overlay root comes from the
-machine configuration, not from what is typed here. With no `stayfixed.toml`, the project is the
+in this repository's `drybag.toml`, and `attach` derives it: the overlay root comes from the
+machine configuration, not from what is typed here. With no `drybag.toml`, the project is the
 one the overlay records this checkout's remote for, or one named after that remote; where the
 user wants another, or `attach` asks for one, pass `--project NAME`.
 
-1. Run `stayfixed attach --check` first. It reports whether this machine already
+1. Run `drybag attach --check` first. It reports whether this machine already
    binds this checkout (`bound` or `unbound`), and which allow rules would be added. It
    writes nothing.
-2. Run `stayfixed attach`; it merges the rules, installs the overlay's hooks, skills and agents as
+2. Run `drybag attach`; it merges the rules, installs the overlay's hooks, skills and agents as
    this checkout's local plugin, points the harness's memory at the overlay's notes where
    `memory.mode` is `overlay` (nowhere otherwise), all in the main checkout, which every worktree
    reads, and prints one screen: the binding with the
@@ -28,7 +28,7 @@ user wants another, or `attach` asks for one, pass `--project NAME`.
    binding or the overlay records -- relay that line. It refuses nothing: the binding is an id
    this machine keeps, never the remote. Never print or relay more of the binding id than the
    eight characters the command prints.
-4. `stayfixed detach` withdraws the overlay's plugin and removes the merged rules, the Codex rule
+4. `drybag detach` withdraws the overlay's plugin and removes the merged rules, the Codex rule
    files, the memory pointer and the local ledger, and leaves the overlay's project record
    untouched.
    Relay what it removed. If it exits 1 because the settings file still names the plugin, relay
